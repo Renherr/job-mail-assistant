@@ -1,0 +1,32 @@
+{
+  "app": {
+    "pollIntervalMinutes": 30,
+    "window": {
+      "width": 420,
+      "height": 720,
+      "alwaysOnTop": false
+    }
+  },
+  "mysql": {
+    "host": "127.0.0.1",
+    "port": 3306,
+    "user": "root",
+    "password": "replace-me",
+    "database": "job_mail_assistant"
+  },
+  "mail": {
+    "provider": "163",
+    "user": "your_mail@163.com",
+    "password": "your_imap_authorization_code",
+    "host": "imap.163.com",
+    "port": 993,
+    "secure": true,
+    "initialSyncStartDate": "2026-03-01"
+  },
+  "ai": {
+    "enabled": false,
+    "baseUrl": "https://example.com/v1",
+    "apiKey": "replace-me",
+    "model": "replace-me"
+  }
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>求职邮件助手</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="panel">
+      <header class="panel-header">
+        <div>
+          <h1>求职邮件助手</h1>
+        </div>
+        <div class="header-actions">
+          <button class="ghost-button" id="sync-button" type="button">同步邮件</button>
+          <button class="ghost-button" id="refresh-button" type="button">刷新</button>
+        </div>
+      </header>
+
+      <section class="card summary-card">
+        <h2>今日摘要</h2>
+        <div class="summary-grid">
+          <div class="summary-item">
+            <span id="new-mails-count">0</span>
+            <label>新增求职邮件</label>
+          </div>
+          <div class="summary-item">
+            <span id="open-tasks-count">0</span>
+            <label>待处理事项</label>
+          </div>
+          <div class="summary-item">
+            <span id="updated-apps-count">0</span>
+            <label>岗位状态变化</label>
+          </div>
+        </div>
+        <p class="urgent-line" id="urgent-text">等待数据加载。</p>
+        <p class="status-line" id="status-text">已就绪。</p>
+      </section>
+
+      <section class="card">
+        <div class="section-title">
+          <h2>待办清单</h2>
+        </div>
+        <div id="tasks-list" class="empty-state">暂无待办</div>
+      </section>
+
+      <section class="card">
+        <div class="section-title">
+          <h2>公司 / 岗位进度</h2>
+        </div>
+        <div id="applications-list" class="empty-state">暂无岗位记录</div>
+      </section>
+    </div>
+
+    <div class="modal-backdrop hidden" id="application-modal-backdrop">
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="application-modal-title">
+        <div class="modal-header">
+          <h3 id="application-modal-title">编辑岗位信息</h3>
+          <button class="ghost-button small-button" id="application-modal-close" type="button">关闭</button>
+        </div>
+        <form id="application-form" class="modal-form">
+          <input type="hidden" id="application-id" />
+          <label class="field">
+            <span>公司名</span>
+            <input id="application-company-name" type="text" required />
+          </label>
+          <label class="field">
+            <span>岗位名</span>
+            <input id="application-role-name" type="text" required />
+          </label>
+          <label class="field">
+            <span>当前阶段</span>
+            <select id="application-current-stage"></select>
+          </label>
+          <label class="field">
+            <span>重要链接</span>
+            <input id="application-important-link" type="url" placeholder="https://..." />
+            <small class="field-hint">这里优先填写笔试入口、面试会议、测评登录等最直接可用的链接。</small>
+          </label>
+          <div class="modal-actions">
+            <button class="ghost-button" id="application-modal-cancel" type="button">取消</button>
+            <button class="primary-button" type="submit">保存</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
