@@ -37,7 +37,7 @@
 
 ### 主界面
 
-![求职邮件助手界面示例](./docs/screenshots/app-screen-1.png)
+![求职邮件助手界面示例](./docs/screenshots/app-screens-1.png)
 
 ## 快速开始
 
